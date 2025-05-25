@@ -174,4 +174,4 @@ while total_tx < TOTAL_TX:
             print("Status: Transaction status file deleted after reaching total transactions.")
         break
 
-    time.sleep(3)
+    time.sleep(10)
