@@ -111,7 +111,7 @@ def deposit_eth(amount_in_wei, max_priority_fee_per_gas_gwei=0.015, max_fee_per_
         print(f"Deposit ETH error: {e}")
         return None, 0
 
-def withdraw_eth(amount_in_wei, max_priority_fee_per_gas_gwei=0.011, max_fee_per_gas_gwei=0.011):
+def withdraw_eth(amount_in_wei, max_priority_fee_per_gas_gwei=0.0135, max_fee_per_gas_gwei=0.0135):
     try:
         start_time = time.time()
         max_priority_fee_per_gas = w3.to_wei(max_priority_fee_per_gas_gwei, 'gwei')
@@ -161,7 +161,7 @@ while total_tx < TOTAL_TX:
             save_transaction_status(deposit_counter, withdraw_counter, total_tx)
 
     if withdraw_counter < 55 and total_tx < TOTAL_TX:
-        tx_hash, execution_time = withdraw_eth(amount, max_priority_fee_per_gas_gwei=0.011)
+        tx_hash, execution_time = withdraw_eth(amount, max_priority_fee_per_gas_gwei=0.0135)
         if tx_hash:
             withdraw_counter += 1
             total_tx += 1
@@ -174,4 +174,4 @@ while total_tx < TOTAL_TX:
             print("Status: Transaction status file deleted after reaching total transactions.")
         break
 
-    time.sleep(10)
+    time.sleep(3)
