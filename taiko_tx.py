@@ -111,7 +111,7 @@ def deposit_eth(amount_in_wei, max_priority_fee_per_gas_gwei=0.015, max_fee_per_
         print(f"Deposit ETH error: {e}")
         return None, 0
 
-def withdraw_eth(amount_in_wei, max_priority_fee_per_gas_gwei=0.011, max_fee_per_gas_gwei=0.011):
+def withdraw_eth(amount_in_wei, max_priority_fee_per_gas_gwei=0.0135, max_fee_per_gas_gwei=0.0135):
     try:
         start_time = time.time()
         max_priority_fee_per_gas = w3.to_wei(max_priority_fee_per_gas_gwei, 'gwei')
