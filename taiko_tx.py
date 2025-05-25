@@ -79,7 +79,7 @@ def load_transaction_status():
     except (FileNotFoundError, json.JSONDecodeError):
         return 0, 0, 0
 
-def deposit_eth(amount_in_wei, max_priority_fee_per_gas_gwei=0.015, max_fee_per_gas_gwei=0.015):
+def deposit_eth(amount_in_wei, max_priority_fee_per_gas_gwei=0.0152, max_fee_per_gas_gwei=0.0152):
     try:
         start_time = time.time()
         max_priority_fee_per_gas = w3.to_wei(max_priority_fee_per_gas_gwei, 'gwei')
@@ -153,7 +153,7 @@ deposit_counter, withdraw_counter, total_tx = load_transaction_status()
 
 while total_tx < TOTAL_TX:
     if deposit_counter < 55 and total_tx < TOTAL_TX:
-        tx_hash, execution_time = deposit_eth(amount, max_priority_fee_per_gas_gwei=0.015)
+        tx_hash, execution_time = deposit_eth(amount, max_priority_fee_per_gas_gwei=0.0152)
         if tx_hash:
             deposit_counter += 1
             total_tx += 1
