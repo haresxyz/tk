@@ -3,7 +3,7 @@ name: Run Taiko ETH Deposit and Withdraw Script
 on:
   workflow_dispatch:         # Manual trigger
   schedule:
-    - cron: '20 2 * * *'     # (02:40 UTC)
+    - cron: '02 3 * * *'     # (02:40 UTC)
 
 jobs:
   run_transaction_script:
